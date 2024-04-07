@@ -92,10 +92,12 @@ public:
         HourHandSlider = new QSlider(centralwidget);
         HourHandSlider->setObjectName("HourHandSlider");
         HourHandSlider->setGeometry(QRect(200, 490, 160, 16));
+        HourHandSlider->setMaximum(23);
         HourHandSlider->setOrientation(Qt::Horizontal);
         minuteHandSlider = new QSlider(centralwidget);
         minuteHandSlider->setObjectName("minuteHandSlider");
         minuteHandSlider->setGeometry(QRect(380, 490, 160, 16));
+        minuteHandSlider->setMaximum(59);
         minuteHandSlider->setOrientation(Qt::Horizontal);
         label = new QLabel(centralwidget);
         label->setObjectName("label");

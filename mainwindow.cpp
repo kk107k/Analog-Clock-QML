@@ -29,6 +29,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->darkModeRadioButton, &QRadioButton::clicked, this, [this]{ ui->clockFace->setColorTheme(ClockFace::Dark); });
     connect(ui->blueModeRadioButton, &QRadioButton::clicked, this, [this]{ ui->clockFace->setColorTheme(ClockFace::Blue); });
     connect(ui->redModeRadioButton, &QRadioButton::clicked, this, [this]{ ui->clockFace->setColorTheme(ClockFace::Red); });
+
+    // Connect the sliders to the ClockFace
+    connect(ui->HourHandSlider, &QSlider::valueChanged, ui->clockFace, &ClockFace::setHour);
+    connect(ui->minuteHandSlider, &QSlider::valueChanged, ui->clockFace, &ClockFace::setMinute);
+
+    // Set the range for the sliders
+    ui->HourHandSlider->setRange(0, 23);
+    ui->minuteHandSlider->setRange(0, 59);
+
     // Initial display update
     updateDigitalDisplay();
 }

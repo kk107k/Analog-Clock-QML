@@ -1,6 +1,7 @@
 #include "ClockFace.h"
 
-ClockFace::ClockFace(QWidget *parent) : QWidget(parent), showDashLines(true), colorTheme(Light) {}
+ClockFace::ClockFace(QWidget *parent) : QWidget(parent), showDashLines(true), colorTheme(Light), currentTime(QTime::currentTime()) {}
+
 
 void ClockFace::paintEvent(QPaintEvent *event) {
     Q_UNUSED(event);
@@ -29,12 +30,25 @@ void ClockFace::setColorTheme(ColorTheme theme) {
     update(); // Force a repaint to reflect the change
 }
 
+void ClockFace::setHour(int hour) {
+    currentTime.setHMS(hour, currentTime.minute(), 0);
+    update(); // Force a repaint to reflect the change
+}
+
+void ClockFace::setMinute(int minute) {
+    currentTime.setHMS(currentTime.hour(), minute, 0);
+    update(); // Force a repaint to reflect the change
+}
+
 void ClockFace::drawClockFace(QPainter *painter) {
     int side = qMin(width(), height());
-    QTime time = QTime::currentTime();
+
 
     painter->setViewport((width() - side) / 2, (height() - side) / 2, side, side);
     painter->setWindow(-50, -50, 100, 100); // Logical coordinate system
+
+    // Use currentTime instead of QTime::currentTime()
+    QTime time = currentTime;
 
     // Draw the circle for the clock face
     painter->setBrush(Qt::white);

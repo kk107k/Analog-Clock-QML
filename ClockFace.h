@@ -18,6 +18,8 @@ public slots:
     void toggleMinuteHand();
     void toggleDashLines();
     void setColorTheme(ColorTheme theme);
+    void setHour(int hour);
+    void setMinute(int minute);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -28,6 +30,7 @@ private:
     bool showMinuteHand = true;
     bool showDashLines = true;
     ColorTheme colorTheme = Light;
+    QTime currentTime;
 };
 
 #endif // CLOCKFACE_H
