@@ -11,7 +11,7 @@ class ClockFace : public QWidget
 
 public:
     explicit ClockFace(QWidget *parent = nullptr);
-    enum ColorTheme { Light, Dark, Blue, Red };
+    enum ColorTheme { Black, Blue, Green, Orange };
 
 public slots:
     void toggleHourHand();
@@ -30,7 +30,7 @@ private:
     bool showMinuteHand = true;
     bool showSecondHand = true;
     bool showDashLines = true;
-    ColorTheme colorTheme = Light;
+    ColorTheme colorTheme = Black;
     QTime currentTime;
 };
 

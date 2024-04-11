@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -12,16 +13,20 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-signals:
-    void clockUpdated(const QTime& currentTime);
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void clockUpdated(const QTime& currentTime);
+
 private slots:
+    void setManualHour(int hour);
+    void setManualMinute(int minute);
+    void setManualTime(int totalMinutes);
     void toggleHourHand();
     void toggleMinuteHand();
+    void toggleManualTime();
     void toggleDigitalDisplay();
     void setDigitalFormat(bool is24Hour);
     void updateDigitalDisplay();
@@ -31,6 +36,8 @@ private:
     Ui::MainWindow *ui;
     QTimer *timer;
     bool is24HourFormat;
+    QTime manualTime;  // Added to hold the manual time set by sliders
+    bool useManualTime; // Added to determine whether to use manual or system time
 };
 
 #endif // MAINWINDOW_H

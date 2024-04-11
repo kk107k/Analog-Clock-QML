@@ -37,13 +37,14 @@ public:
     QPushButton *toggleDashLinesButton;
     QPushButton *toggleMinuteHandButton;
     QPushButton *toggleHourHandButton;
-    QSlider *HourHandSlider;
+    QSlider *hourHandSlider;
     QSlider *minuteHandSlider;
     QLabel *label;
     QLabel *label_2;
     QRadioButton *blueModeRadioButton;
     QRadioButton *redModeRadioButton;
     QPushButton *toggleSecondHandButton;
+    QPushButton *toggleManualTimeButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -90,22 +91,22 @@ public:
         toggleHourHandButton = new QPushButton(centralwidget);
         toggleHourHandButton->setObjectName("toggleHourHandButton");
         toggleHourHandButton->setGeometry(QRect(380, 450, 81, 31));
-        HourHandSlider = new QSlider(centralwidget);
-        HourHandSlider->setObjectName("HourHandSlider");
-        HourHandSlider->setGeometry(QRect(200, 490, 160, 16));
-        HourHandSlider->setMaximum(23);
-        HourHandSlider->setOrientation(Qt::Horizontal);
+        hourHandSlider = new QSlider(centralwidget);
+        hourHandSlider->setObjectName("hourHandSlider");
+        hourHandSlider->setGeometry(QRect(200, 490, 160, 16));
+        hourHandSlider->setMaximum(23);
+        hourHandSlider->setOrientation(Qt::Horizontal);
         minuteHandSlider = new QSlider(centralwidget);
         minuteHandSlider->setObjectName("minuteHandSlider");
-        minuteHandSlider->setGeometry(QRect(200, 530, 160, 16));
-        minuteHandSlider->setMaximum(59);
+        minuteHandSlider->setGeometry(QRect(200, 530, 351, 16));
+        minuteHandSlider->setMaximum(1439);
         minuteHandSlider->setOrientation(Qt::Horizontal);
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(230, 510, 101, 16));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(230, 550, 101, 16));
+        label_2->setGeometry(QRect(320, 550, 101, 16));
         blueModeRadioButton = new QRadioButton(centralwidget);
         blueModeRadioButton->setObjectName("blueModeRadioButton");
         blueModeRadioButton->setGeometry(QRect(380, 510, 91, 21));
@@ -115,6 +116,9 @@ public:
         toggleSecondHandButton = new QPushButton(centralwidget);
         toggleSecondHandButton->setObjectName("toggleSecondHandButton");
         toggleSecondHandButton->setGeometry(QRect(470, 450, 81, 31));
+        toggleManualTimeButton = new QPushButton(centralwidget);
+        toggleManualTimeButton->setObjectName("toggleManualTimeButton");
+        toggleManualTimeButton->setGeometry(QRect(470, 410, 81, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -146,6 +150,7 @@ public:
         blueModeRadioButton->setText(QCoreApplication::translate("MainWindow", "Blue Mode", nullptr));
         redModeRadioButton->setText(QCoreApplication::translate("MainWindow", "Red Mode", nullptr));
         toggleSecondHandButton->setText(QCoreApplication::translate("MainWindow", "Second Hand", nullptr));
+        toggleManualTimeButton->setText(QCoreApplication::translate("MainWindow", "System Time", nullptr));
     } // retranslateUi
 
 };
