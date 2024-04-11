@@ -26,8 +26,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *toggleDigitalButton;
-    QPushButton *toggle12HourModeButton;
     ClockFace *clockFace;
     QLabel *digitalDisplayLabel;
     QPushButton *toggle24HourModeButton;
@@ -36,14 +34,21 @@ public:
     QPushButton *toggleHourHandButton;
     QSlider *hourHandSlider;
     QSlider *minuteHandSlider;
-    QLabel *label;
-    QLabel *label_2;
+    QLabel *HourHandSliderLabel;
+    QLabel *minuteHandSliderLabel;
     QPushButton *toggleSecondHandButton;
     QPushButton *toggleManualTimeButton;
     QPushButton *blackModeButton;
     QPushButton *blueModeButton;
     QPushButton *orangeModeButton;
     QPushButton *greenModeButton;
+    QLabel *dashLineLabel;
+    QLabel *digitalLabel;
+    QLabel *hourHandLabel;
+    QPushButton *toggleDigitalButton;
+    QPushButton *toggle12HourModeButton;
+    QLabel *hourHandLabel_2;
+    QLabel *hourHandLabel_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -54,12 +59,6 @@ public:
         MainWindow->resize(800, 616);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        toggleDigitalButton = new QPushButton(centralwidget);
-        toggleDigitalButton->setObjectName("toggleDigitalButton");
-        toggleDigitalButton->setGeometry(QRect(290, 370, 81, 31));
-        toggle12HourModeButton = new QPushButton(centralwidget);
-        toggle12HourModeButton->setObjectName("toggle12HourModeButton");
-        toggle12HourModeButton->setGeometry(QRect(290, 410, 81, 31));
         clockFace = new ClockFace(centralwidget);
         clockFace->setObjectName("clockFace");
         clockFace->setGeometry(QRect(190, 40, 371, 321));
@@ -75,41 +74,107 @@ public:
         digitalDisplayLabel->setAlignment(Qt::AlignCenter);
         toggle24HourModeButton = new QPushButton(centralwidget);
         toggle24HourModeButton->setObjectName("toggle24HourModeButton");
-        toggle24HourModeButton->setGeometry(QRect(200, 410, 81, 31));
+        toggle24HourModeButton->setGeometry(QRect(520, 340, 41, 41));
+        toggle24HourModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         toggleDashLinesButton = new QPushButton(centralwidget);
         toggleDashLinesButton->setObjectName("toggleDashLinesButton");
-        toggleDashLinesButton->setGeometry(QRect(200, 370, 81, 31));
+        toggleDashLinesButton->setGeometry(QRect(190, 310, 41, 41));
+        toggleDashLinesButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         toggleMinuteHandButton = new QPushButton(centralwidget);
         toggleMinuteHandButton->setObjectName("toggleMinuteHandButton");
-        toggleMinuteHandButton->setGeometry(QRect(380, 370, 81, 31));
+        toggleMinuteHandButton->setGeometry(QRect(520, 60, 41, 41));
+        toggleMinuteHandButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         toggleHourHandButton = new QPushButton(centralwidget);
         toggleHourHandButton->setObjectName("toggleHourHandButton");
-        toggleHourHandButton->setGeometry(QRect(380, 410, 81, 31));
+        toggleHourHandButton->setGeometry(QRect(190, 50, 41, 41));
+        toggleHourHandButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         hourHandSlider = new QSlider(centralwidget);
         hourHandSlider->setObjectName("hourHandSlider");
-        hourHandSlider->setGeometry(QRect(200, 450, 160, 16));
+        hourHandSlider->setGeometry(QRect(180, 390, 111, 16));
         hourHandSlider->setMaximum(23);
         hourHandSlider->setOrientation(Qt::Horizontal);
         minuteHandSlider = new QSlider(centralwidget);
         minuteHandSlider->setObjectName("minuteHandSlider");
-        minuteHandSlider->setGeometry(QRect(200, 490, 351, 16));
+        minuteHandSlider->setGeometry(QRect(300, 390, 211, 16));
         minuteHandSlider->setMaximum(1439);
         minuteHandSlider->setOrientation(Qt::Horizontal);
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(230, 470, 101, 16));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(320, 510, 101, 16));
+        HourHandSliderLabel = new QLabel(centralwidget);
+        HourHandSliderLabel->setObjectName("HourHandSliderLabel");
+        HourHandSliderLabel->setGeometry(QRect(190, 410, 101, 16));
+        minuteHandSliderLabel = new QLabel(centralwidget);
+        minuteHandSliderLabel->setObjectName("minuteHandSliderLabel");
+        minuteHandSliderLabel->setGeometry(QRect(380, 410, 101, 16));
         toggleSecondHandButton = new QPushButton(centralwidget);
         toggleSecondHandButton->setObjectName("toggleSecondHandButton");
-        toggleSecondHandButton->setGeometry(QRect(470, 410, 81, 31));
+        toggleSecondHandButton->setGeometry(QRect(520, 10, 41, 41));
+        toggleSecondHandButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         toggleManualTimeButton = new QPushButton(centralwidget);
         toggleManualTimeButton->setObjectName("toggleManualTimeButton");
-        toggleManualTimeButton->setGeometry(QRect(470, 370, 81, 31));
+        toggleManualTimeButton->setGeometry(QRect(520, 390, 41, 41));
+        toggleManualTimeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
         blackModeButton = new QPushButton(centralwidget);
         blackModeButton->setObjectName("blackModeButton");
-        blackModeButton->setGeometry(QRect(390, 450, 31, 31));
+        blackModeButton->setGeometry(QRect(180, 360, 21, 21));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -179,9 +244,15 @@ public:
 #endif
         palette.setBrush(QPalette::Disabled, QPalette::Accent, brush1);
         blackModeButton->setPalette(palette);
+        blackModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"  border-radius: 10%;\n"
+"  background-color: black;} \n"
+" QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}"));
         blueModeButton = new QPushButton(centralwidget);
         blueModeButton->setObjectName("blueModeButton");
-        blueModeButton->setGeometry(QRect(430, 450, 31, 31));
+        blueModeButton->setGeometry(QRect(210, 360, 21, 21));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         QBrush brush5(QColor(25, 118, 210, 255));
@@ -202,7 +273,7 @@ public:
         palette1.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette1.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush5);
         palette1.setBrush(QPalette::Active, QPalette::Window, brush5);
         palette1.setBrush(QPalette::Active, QPalette::Shadow, brush1);
         QBrush brush10(QColor(140, 186, 232, 255));
@@ -223,7 +294,7 @@ public:
         palette1.setBrush(QPalette::Inactive, QPalette::Text, brush1);
         palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
-        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush5);
         palette1.setBrush(QPalette::Inactive, QPalette::Window, brush5);
         palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush1);
         palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush10);
@@ -257,9 +328,12 @@ public:
         brush12.setStyle(Qt::SolidPattern);
         palette1.setBrush(QPalette::Disabled, QPalette::Accent, brush12);
         blueModeButton->setPalette(palette1);
+        blueModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"  border-radius: 10%;\n"
+"  background-color: #1976D2;}"));
         orangeModeButton = new QPushButton(centralwidget);
         orangeModeButton->setObjectName("orangeModeButton");
-        orangeModeButton->setGeometry(QRect(470, 450, 31, 31));
+        orangeModeButton->setGeometry(QRect(240, 360, 21, 21));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         QBrush brush13(QColor(255, 87, 34, 255));
@@ -280,7 +354,7 @@ public:
         palette2.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette2.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette2.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        palette2.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette2.setBrush(QPalette::Active, QPalette::Base, brush13);
         palette2.setBrush(QPalette::Active, QPalette::Window, brush13);
         palette2.setBrush(QPalette::Active, QPalette::Shadow, brush1);
         QBrush brush18(QColor(255, 171, 144, 255));
@@ -301,7 +375,7 @@ public:
         palette2.setBrush(QPalette::Inactive, QPalette::Text, brush1);
         palette2.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
-        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush13);
         palette2.setBrush(QPalette::Inactive, QPalette::Window, brush13);
         palette2.setBrush(QPalette::Inactive, QPalette::Shadow, brush1);
         palette2.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush18);
@@ -335,9 +409,12 @@ public:
         brush20.setStyle(Qt::SolidPattern);
         palette2.setBrush(QPalette::Disabled, QPalette::Accent, brush20);
         orangeModeButton->setPalette(palette2);
+        orangeModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"  border-radius: 10%;\n"
+"  background-color: #FF5722;}"));
         greenModeButton = new QPushButton(centralwidget);
         greenModeButton->setObjectName("greenModeButton");
-        greenModeButton->setGeometry(QRect(510, 450, 31, 31));
+        greenModeButton->setGeometry(QRect(270, 360, 21, 21));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         QBrush brush21(QColor(56, 142, 60, 255));
@@ -358,7 +435,7 @@ public:
         palette3.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette3.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette3.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        palette3.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Active, QPalette::Base, brush21);
         palette3.setBrush(QPalette::Active, QPalette::Window, brush21);
         palette3.setBrush(QPalette::Active, QPalette::Shadow, brush1);
         QBrush brush26(QColor(155, 198, 157, 255));
@@ -379,7 +456,7 @@ public:
         palette3.setBrush(QPalette::Inactive, QPalette::Text, brush1);
         palette3.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette3.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
-        palette3.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::Base, brush21);
         palette3.setBrush(QPalette::Inactive, QPalette::Window, brush21);
         palette3.setBrush(QPalette::Inactive, QPalette::Shadow, brush1);
         palette3.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush26);
@@ -413,6 +490,64 @@ public:
         brush28.setStyle(Qt::SolidPattern);
         palette3.setBrush(QPalette::Disabled, QPalette::Accent, brush28);
         greenModeButton->setPalette(palette3);
+        greenModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"  border-radius: 10%;\n"
+"  background-color: #388E3C;}"));
+        dashLineLabel = new QLabel(centralwidget);
+        dashLineLabel->setObjectName("dashLineLabel");
+        dashLineLabel->setGeometry(QRect(220, 320, 71, 21));
+        QFont font1;
+        font1.setPointSize(7);
+        dashLineLabel->setFont(font1);
+        dashLineLabel->setAlignment(Qt::AlignCenter);
+        digitalLabel = new QLabel(centralwidget);
+        digitalLabel->setObjectName("digitalLabel");
+        digitalLabel->setGeometry(QRect(470, 300, 71, 21));
+        digitalLabel->setFont(font1);
+        digitalLabel->setAlignment(Qt::AlignCenter);
+        hourHandLabel = new QLabel(centralwidget);
+        hourHandLabel->setObjectName("hourHandLabel");
+        hourHandLabel->setGeometry(QRect(220, 60, 71, 21));
+        hourHandLabel->setFont(font1);
+        hourHandLabel->setAlignment(Qt::AlignCenter);
+        toggleDigitalButton = new QPushButton(centralwidget);
+        toggleDigitalButton->setObjectName("toggleDigitalButton");
+        toggleDigitalButton->setGeometry(QRect(520, 290, 41, 41));
+        toggleDigitalButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
+        toggle12HourModeButton = new QPushButton(centralwidget);
+        toggle12HourModeButton->setObjectName("toggle12HourModeButton");
+        toggle12HourModeButton->setGeometry(QRect(470, 340, 41, 41));
+        toggle12HourModeButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"   border: 2px solid black;\n"
+"   border-radius: 10px;\n"
+"   font: bold 14px;\n"
+"   padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"   background-color: grey;\n"
+"}\n"
+""));
+        hourHandLabel_2 = new QLabel(centralwidget);
+        hourHandLabel_2->setObjectName("hourHandLabel_2");
+        hourHandLabel_2->setGeometry(QRect(450, 70, 81, 21));
+        hourHandLabel_2->setFont(font1);
+        hourHandLabel_2->setAlignment(Qt::AlignCenter);
+        hourHandLabel_3 = new QLabel(centralwidget);
+        hourHandLabel_3->setObjectName("hourHandLabel_3");
+        hourHandLabel_3->setGeometry(QRect(450, 20, 81, 21));
+        hourHandLabel_3->setFont(font1);
+        hourHandLabel_3->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -430,21 +565,26 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        toggleDigitalButton->setText(QCoreApplication::translate("MainWindow", "Digital", nullptr));
-        toggle12HourModeButton->setText(QCoreApplication::translate("MainWindow", "12 Hour", nullptr));
         digitalDisplayLabel->setText(QCoreApplication::translate("MainWindow", "12:44 PM", nullptr));
-        toggle24HourModeButton->setText(QCoreApplication::translate("MainWindow", "24 Hour", nullptr));
-        toggleDashLinesButton->setText(QCoreApplication::translate("MainWindow", "Dash Lines", nullptr));
-        toggleMinuteHandButton->setText(QCoreApplication::translate("MainWindow", "Minute Hand", nullptr));
-        toggleHourHandButton->setText(QCoreApplication::translate("MainWindow", "Hour Hand", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Hour hand slider", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Minute hand slider", nullptr));
-        toggleSecondHandButton->setText(QCoreApplication::translate("MainWindow", "Second Hand", nullptr));
-        toggleManualTimeButton->setText(QCoreApplication::translate("MainWindow", "System Time", nullptr));
+        toggle24HourModeButton->setText(QCoreApplication::translate("MainWindow", "24", nullptr));
+        toggleDashLinesButton->setText(QCoreApplication::translate("MainWindow", "ON", nullptr));
+        toggleMinuteHandButton->setText(QCoreApplication::translate("MainWindow", "ON", nullptr));
+        toggleHourHandButton->setText(QCoreApplication::translate("MainWindow", "ON", nullptr));
+        HourHandSliderLabel->setText(QCoreApplication::translate("MainWindow", "Hour hand slider", nullptr));
+        minuteHandSliderLabel->setText(QCoreApplication::translate("MainWindow", "Minute hand slider", nullptr));
+        toggleSecondHandButton->setText(QCoreApplication::translate("MainWindow", "ON", nullptr));
+        toggleManualTimeButton->setText(QCoreApplication::translate("MainWindow", "Time", nullptr));
         blackModeButton->setText(QString());
         blueModeButton->setText(QString());
         orangeModeButton->setText(QString());
         greenModeButton->setText(QString());
+        dashLineLabel->setText(QCoreApplication::translate("MainWindow", "Dash Lines", nullptr));
+        digitalLabel->setText(QCoreApplication::translate("MainWindow", "Digital", nullptr));
+        hourHandLabel->setText(QCoreApplication::translate("MainWindow", "Hour Hand", nullptr));
+        toggleDigitalButton->setText(QCoreApplication::translate("MainWindow", "ON", nullptr));
+        toggle12HourModeButton->setText(QCoreApplication::translate("MainWindow", "12", nullptr));
+        hourHandLabel_2->setText(QCoreApplication::translate("MainWindow", "Minute Hand", nullptr));
+        hourHandLabel_3->setText(QCoreApplication::translate("MainWindow", "Second Hand", nullptr));
     } // retranslateUi
 
 };

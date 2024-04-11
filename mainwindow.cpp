@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Slider connections
     connect(ui->hourHandSlider, &QSlider::valueChanged, this, &MainWindow::setManualHour);
-    connect(ui->minuteHandSlider, &QSlider::valueChanged, this, &MainWindow::setManualMinute);
+    connect(ui->minuteHandSlider, &QSlider::valueChanged, this, &MainWindow::setManualTime);
 
     // Connect hand visibility toggles
     connect(ui->toggleHourHandButton, &QPushButton::clicked, ui->clockFace, &ClockFace::toggleHourHand);
@@ -45,11 +45,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->toggleManualTimeButton, &QPushButton::clicked, this, &MainWindow::toggleManualTime);
 
-    // Connect the slider signal to the slot for manual time setting
-    connect(ui->minuteHandSlider, &QSlider::valueChanged, this, &MainWindow::setManualTime);
 
     // Connect for updateDigitalDisplay
     connect(this, &MainWindow::clockUpdated, this, &MainWindow::updateDigitalDisplay);
+
+    // Connect to the Buttons
+    connect(ui->toggleHourHandButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggleMinuteHandButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggleSecondHandButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggleDigitalButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggle24HourModeButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggle12HourModeButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+    connect(ui->toggleDashLinesButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
+
+    // Repeat for other buttons
+
 
     // Initial display update
     updateDigitalDisplay();
@@ -131,3 +141,25 @@ void MainWindow::updateClock() {
         emit clockUpdated(currentTime); // Emit signal with updated time
     }
 }
+
+void MainWindow::onAnyButtonClicked() {
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
+    if (button) { // Check if the cast was successful
+        if (button->text() == "ON") {
+            button->setText("OFF");
+        } else {
+            button->setText("ON");
+        }
+    }
+}
+
+
+void MainWindow::on_toggleDashLinesButton_clicked()
+{
+    if (ui->toggleDashLinesButton->text() == "On") {
+        ui->toggleDashLinesButton->setText("Off");
+    } else {
+        ui->toggleDashLinesButton->setText("On");
+    }
+}
+

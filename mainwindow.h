@@ -31,6 +31,8 @@ private slots:
     void setDigitalFormat(bool is24Hour);
     void updateDigitalDisplay();
     void updateClock();
+    void onAnyButtonClicked();
+    void on_toggleDashLinesButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -14,32 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="toggleDigitalButton">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>370</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Digital</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="toggle12HourModeButton">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>410</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>12 Hour</string>
-    </property>
-   </widget>
    <widget class="ClockFace" name="clockFace">
     <property name="geometry">
      <rect>
@@ -77,61 +51,113 @@
    <widget class="QPushButton" name="toggle24HourModeButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>410</y>
-      <width>81</width>
-      <height>31</height>
+      <x>520</x>
+      <y>340</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>24 Hour</string>
+     <string>24</string>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleDashLinesButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>370</y>
-      <width>81</width>
-      <height>31</height>
+      <x>190</x>
+      <y>310</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>Dash Lines</string>
+     <string>ON</string>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleMinuteHandButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>370</y>
-      <width>81</width>
-      <height>31</height>
+      <x>520</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>Minute Hand</string>
+     <string>ON</string>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleHourHandButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>410</y>
-      <width>81</width>
-      <height>31</height>
+      <x>190</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>Hour Hand</string>
+     <string>ON</string>
     </property>
    </widget>
    <widget class="QSlider" name="hourHandSlider">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>450</y>
-      <width>160</width>
+      <x>180</x>
+      <y>390</y>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
@@ -145,9 +171,9 @@
    <widget class="QSlider" name="minuteHandSlider">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>490</y>
-      <width>351</width>
+      <x>300</x>
+      <y>390</y>
+      <width>211</width>
       <height>16</height>
      </rect>
     </property>
@@ -158,11 +184,11 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="HourHandSliderLabel">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>470</y>
+      <x>190</x>
+      <y>410</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -171,11 +197,11 @@
      <string>Hour hand slider</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="minuteHandSliderLabel">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>510</y>
+      <x>380</x>
+      <y>410</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -187,36 +213,62 @@
    <widget class="QPushButton" name="toggleSecondHandButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>410</y>
-      <width>81</width>
-      <height>31</height>
+      <x>520</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>Second Hand</string>
+     <string>ON</string>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleManualTimeButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>370</y>
-      <width>81</width>
-      <height>31</height>
+      <x>520</x>
+      <y>390</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
     <property name="text">
-     <string>System Time</string>
+     <string>Time</string>
     </property>
    </widget>
    <widget class="QPushButton" name="blackModeButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>450</y>
-      <width>31</width>
-      <height>31</height>
+      <x>180</x>
+      <y>360</y>
+      <width>21</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="palette">
@@ -688,6 +740,14 @@
       </disabled>
      </palette>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  border-radius: 10%;
+  background-color: black;} 
+ QPushButton:pressed {
+   background-color: grey;
+}</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -695,10 +755,10 @@
    <widget class="QPushButton" name="blueModeButton">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>450</y>
-      <width>31</width>
-      <height>31</height>
+      <x>210</x>
+      <y>360</y>
+      <width>21</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="palette">
@@ -788,9 +848,9 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>25</red>
+          <green>118</green>
+          <blue>210</blue>
          </color>
         </brush>
        </colorrole>
@@ -943,9 +1003,9 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>25</red>
+          <green>118</green>
+          <blue>210</blue>
          </color>
         </brush>
        </colorrole>
@@ -1170,6 +1230,11 @@
       </disabled>
      </palette>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  border-radius: 10%;
+  background-color: #1976D2;}</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1177,10 +1242,10 @@
    <widget class="QPushButton" name="orangeModeButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>450</y>
-      <width>31</width>
-      <height>31</height>
+      <x>240</x>
+      <y>360</y>
+      <width>21</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="palette">
@@ -1271,8 +1336,8 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <green>87</green>
+          <blue>34</blue>
          </color>
         </brush>
        </colorrole>
@@ -1426,8 +1491,8 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <green>87</green>
+          <blue>34</blue>
          </color>
         </brush>
        </colorrole>
@@ -1652,6 +1717,11 @@
       </disabled>
      </palette>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  border-radius: 10%;
+  background-color: #FF5722;}</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1659,10 +1729,10 @@
    <widget class="QPushButton" name="greenModeButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>450</y>
-      <width>31</width>
-      <height>31</height>
+      <x>270</x>
+      <y>360</y>
+      <width>21</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="palette">
@@ -1752,9 +1822,9 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>56</red>
+          <green>142</green>
+          <blue>60</blue>
          </color>
         </brush>
        </colorrole>
@@ -1907,9 +1977,9 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>56</red>
+          <green>142</green>
+          <blue>60</blue>
          </color>
         </brush>
        </colorrole>
@@ -2134,8 +2204,170 @@
       </disabled>
      </palette>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  border-radius: 10%;
+  background-color: #388E3C;}</string>
+    </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dashLineLabel">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>320</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dash Lines</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="digitalLabel">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>300</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Digital</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="hourHandLabel">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Hour Hand</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggleDigitalButton">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>ON</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggle12HourModeButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>340</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   border: 2px solid black;
+   border-radius: 10px;
+   font: bold 14px;
+   padding: 6px;
+}
+
+QPushButton:pressed {
+   background-color: grey;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="hourHandLabel_2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>70</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Minute Hand</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="hourHandLabel_3">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>20</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Second Hand</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
