@@ -39,14 +39,13 @@ constexpr auto qt_meta_stringdata_CLASSClockFaceENDCLASS = QtMocHelpers::stringD
     "toggleHourHand",
     "",
     "toggleMinuteHand",
+    "toggleSecondHand",
     "toggleDashLines",
     "setColorTheme",
     "ColorTheme",
     "theme",
-    "setHour",
-    "hour",
-    "setMinute",
-    "minute"
+    "setCurrentTime",
+    "time"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -70,17 +69,17 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClockFaceENDCLASS[] = {
        1,    0,   50,    2, 0x0a,    1 /* Public */,
        3,    0,   51,    2, 0x0a,    2 /* Public */,
        4,    0,   52,    2, 0x0a,    3 /* Public */,
-       5,    1,   53,    2, 0x0a,    4 /* Public */,
-       8,    1,   56,    2, 0x0a,    6 /* Public */,
-      10,    1,   59,    2, 0x0a,    8 /* Public */,
+       5,    0,   53,    2, 0x0a,    4 /* Public */,
+       6,    1,   54,    2, 0x0a,    5 /* Public */,
+       9,    1,   57,    2, 0x0a,    7 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6,    7,
-    QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void, QMetaType::QTime,   10,
 
        0        // eod
 };
@@ -98,17 +97,16 @@ Q_CONSTINIT const QMetaObject ClockFace::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'toggleMinuteHand'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'toggleSecondHand'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'toggleDashLines'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'setColorTheme'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<ColorTheme, std::false_type>,
-        // method 'setHour'
+        // method 'setCurrentTime'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'setMinute'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<const QTime &, std::false_type>
     >,
     nullptr
 } };
@@ -121,10 +119,10 @@ void ClockFace::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         switch (_id) {
         case 0: _t->toggleHourHand(); break;
         case 1: _t->toggleMinuteHand(); break;
-        case 2: _t->toggleDashLines(); break;
-        case 3: _t->setColorTheme((*reinterpret_cast< std::add_pointer_t<ColorTheme>>(_a[1]))); break;
-        case 4: _t->setHour((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 5: _t->setMinute((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->toggleSecondHand(); break;
+        case 3: _t->toggleDashLines(); break;
+        case 4: _t->setColorTheme((*reinterpret_cast< std::add_pointer_t<ColorTheme>>(_a[1]))); break;
+        case 5: _t->setCurrentTime((*reinterpret_cast< std::add_pointer_t<QTime>>(_a[1]))); break;
         default: ;
         }
     }

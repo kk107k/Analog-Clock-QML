@@ -16,10 +16,10 @@ public:
 public slots:
     void toggleHourHand();
     void toggleMinuteHand();
+    void toggleSecondHand();
     void toggleDashLines();
     void setColorTheme(ColorTheme theme);
-    void setHour(int hour);
-    void setMinute(int minute);
+    void setCurrentTime(const QTime &time);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -28,6 +28,7 @@ private:
     void drawClockFace(QPainter *painter);
     bool showHourHand = true;
     bool showMinuteHand = true;
+    bool showSecondHand = true;
     bool showDashLines = true;
     ColorTheme colorTheme = Light;
     QTime currentTime;

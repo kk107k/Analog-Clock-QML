@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include "ClockFace.h" // Include the ClockFace header for the ColorTheme enum
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -12,6 +11,9 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+signals:
+    void clockUpdated(const QTime& currentTime);
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -23,6 +25,7 @@ private slots:
     void toggleDigitalDisplay();
     void setDigitalFormat(bool is24Hour);
     void updateDigitalDisplay();
+    void updateClock();
 
 private:
     Ui::MainWindow *ui;

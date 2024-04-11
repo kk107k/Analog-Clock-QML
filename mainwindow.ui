@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>447</y>
+      <y>490</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -67,7 +67,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>467</y>
+      <y>510</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -168,8 +168,8 @@
    <widget class="QSlider" name="minuteHandSlider">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>490</y>
+      <x>200</x>
+      <y>530</y>
       <width>160</width>
       <height>16</height>
      </rect>
@@ -197,8 +197,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>510</y>
+      <x>230</x>
+      <y>550</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -210,8 +210,8 @@
    <widget class="QRadioButton" name="blueModeRadioButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>430</y>
+      <x>380</x>
+      <y>510</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -223,14 +223,27 @@
    <widget class="QRadioButton" name="redModeRadioButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>410</y>
+      <x>380</x>
+      <y>490</y>
       <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Red Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggleSecondHandButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>450</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Second Hand</string>
     </property>
    </widget>
   </widget>

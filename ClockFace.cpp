@@ -2,7 +2,6 @@
 
 ClockFace::ClockFace(QWidget *parent) : QWidget(parent), showDashLines(true), colorTheme(Light), currentTime(QTime::currentTime()) {}
 
-
 void ClockFace::paintEvent(QPaintEvent *event) {
     Q_UNUSED(event);
     QPainter painter(this);
@@ -20,6 +19,12 @@ void ClockFace::toggleMinuteHand() {
     update(); // Force a repaint to reflect the change
 }
 
+void ClockFace::toggleSecondHand() {
+    showSecondHand = !showSecondHand;
+    update(); // Force a repaint to reflect the change
+}
+
+
 void ClockFace::toggleDashLines() {
     showDashLines = !showDashLines;
     update(); // Force a repaint to reflect the change
@@ -30,19 +35,13 @@ void ClockFace::setColorTheme(ColorTheme theme) {
     update(); // Force a repaint to reflect the change
 }
 
-void ClockFace::setHour(int hour) {
-    currentTime.setHMS(hour, currentTime.minute(), 0);
-    update(); // Force a repaint to reflect the change
-}
-
-void ClockFace::setMinute(int minute) {
-    currentTime.setHMS(currentTime.hour(), minute, 0);
+void ClockFace::setCurrentTime(const QTime &time) {
+    currentTime = time;
     update(); // Force a repaint to reflect the change
 }
 
 void ClockFace::drawClockFace(QPainter *painter) {
     int side = qMin(width(), height());
-
 
     painter->setViewport((width() - side) / 2, (height() - side) / 2, side, side);
     painter->setWindow(-50, -50, 100, 100); // Logical coordinate system
@@ -81,16 +80,26 @@ void ClockFace::drawClockFace(QPainter *painter) {
     // Hour Hand
     if (showHourHand) {
         painter->save();
+        painter->setPen(QPen(Qt::black, 3));
         painter->rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
-        painter->drawRect(-2, -20, 4, 40);
+        painter->drawRect(0, 0, 0, -20);
         painter->restore();
     }
 
     // Minute Hand
     if (showMinuteHand) {
         painter->save();
+        painter->setPen(QPen(Qt::black, 2));
         painter->rotate(6.0 * (time.minute() + time.second() / 60.0));
-        painter->drawRect(-1, -30, 2, 60);
+        painter->drawRect(0, 0, 0, -30);
+        painter->restore();
+    }
+
+    if (showSecondHand) {
+        painter->save();
+        painter->setPen(QPen(Qt::red, 1));
+        painter->rotate(6.0 * currentTime.second());
+        painter->drawLine(0, 0, 0, -40);
         painter->restore();
     }
 }
