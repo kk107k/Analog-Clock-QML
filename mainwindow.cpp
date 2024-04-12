@@ -54,8 +54,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->toggleMinuteHandButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
     connect(ui->toggleSecondHandButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
     connect(ui->toggleDigitalButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
-    connect(ui->toggle24HourModeButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
-    connect(ui->toggle12HourModeButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
     connect(ui->toggleDashLinesButton, SIGNAL(clicked()), this, SLOT(onAnyButtonClicked()));
 
     // Repeat for other buttons
@@ -154,12 +152,4 @@ void MainWindow::onAnyButtonClicked() {
 }
 
 
-void MainWindow::on_toggleDashLinesButton_clicked()
-{
-    if (ui->toggleDashLinesButton->text() == "On") {
-        ui->toggleDashLinesButton->setText("Off");
-    } else {
-        ui->toggleDashLinesButton->setText("On");
-    }
-}
 

@@ -59,9 +59,9 @@ void ClockFace::drawClockFace(QPainter *painter) {
     }
 
     // Draw the circle for the clock face border with a thicker pen
-    QPen borderPen(borderColor, 8); // Thicker pen for the border
+    QPen borderPen(borderColor, 7); // Thicker pen for the border
     painter->setPen(borderPen);
-    painter->setBrush(Qt::transparent); // No fill for the border
+    painter->setBrush(Qt::white); // Set background color to red
     painter->drawEllipse(-50, -50, 100, 100);
 
     // Reset pen to the original for drawing hour and minute markers
@@ -71,7 +71,7 @@ void ClockFace::drawClockFace(QPainter *painter) {
     // Set font for the minute markers
     QColor minuteMarkerColor = Qt::white;
     QFont minuteFont = painter->font();
-    minuteFont.setPointSize(4); // Adjust the size as needed
+    minuteFont.setPointSize(2); // Adjust the size as needed
     painter->setFont(minuteFont);
     painter->setPen(QPen(minuteMarkerColor));
 
@@ -110,13 +110,13 @@ void ClockFace::drawClockFace(QPainter *painter) {
                 QPen hourMarkerPen(borderColor, 1);
                 hourMarkerPen.setCapStyle(Qt::RoundCap);
                 painter->setPen(hourMarkerPen);
-                painter->drawLine(0, -43, 0, -46);
+                painter->drawLine(0, -44, 0, -47);
             } else {
                 // Use the same color as the border for minute markers
                 QPen minuteMarkerPen(borderColor, 1);
                 minuteMarkerPen.setWidth(0); // Set the pen width to 1 for a skinnier line
                 painter->setPen(minuteMarkerPen);
-                painter->drawLine(0, -44, 0, -46);
+                painter->drawLine(0, -44, 0, -47);
             }
             painter->rotate(6.0); // Rotate 6 degrees for each minute
         }
@@ -124,7 +124,7 @@ void ClockFace::drawClockFace(QPainter *painter) {
 
     // Set font for the numbers
     QFont font = painter->font();
-    font.setPointSize(5); // Adjust the size as needed
+    font.setPointSize(8);
     painter->setFont(font);
 
     int radius = 38; // Set the radius where the numbers will be placed

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>616</height>
+    <width>478</width>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,29 +17,36 @@
    <widget class="ClockFace" name="clockFace">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>40</y>
-      <width>371</width>
-      <height>321</height>
+      <x>10</x>
+      <y>5</y>
+      <width>456</width>
+      <height>461</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="digitalDisplayLabel">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>140</y>
-      <width>111</width>
+      <x>170</x>
+      <y>175</y>
+      <width>136</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <pointsize>23</pointsize>
       <italic>false</italic>
       <bold>false</bold>
       <underline>false</underline>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+   background-color: rgba(255, 255, 255, 127); }</string>
     </property>
     <property name="text">
      <string>12:44 PM</string>
@@ -51,8 +58,8 @@
    <widget class="QPushButton" name="toggle24HourModeButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>340</y>
+      <x>425</x>
+      <y>415</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -61,7 +68,7 @@
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 20px;
    padding: 6px;
 }
 
@@ -77,8 +84,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggleDashLinesButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>310</y>
+      <x>10</x>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -87,7 +94,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 16px;
    padding: 6px;
 }
 
@@ -103,8 +110,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggleMinuteHandButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>60</y>
+      <x>425</x>
+      <y>15</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -113,7 +120,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 16px;
    padding: 6px;
 }
 
@@ -129,8 +136,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggleHourHandButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>50</y>
+      <x>10</x>
+      <y>15</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -139,7 +146,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 16px;
    padding: 6px;
 }
 
@@ -155,9 +162,9 @@ QPushButton:pressed {
    <widget class="QSlider" name="hourHandSlider">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>390</y>
-      <width>111</width>
+      <x>15</x>
+      <y>460</y>
+      <width>331</width>
       <height>16</height>
      </rect>
     </property>
@@ -171,9 +178,9 @@ QPushButton:pressed {
    <widget class="QSlider" name="minuteHandSlider">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>390</y>
-      <width>211</width>
+      <x>15</x>
+      <y>490</y>
+      <width>331</width>
       <height>16</height>
      </rect>
     </property>
@@ -187,34 +194,50 @@ QPushButton:pressed {
    <widget class="QLabel" name="HourHandSliderLabel">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>410</y>
-      <width>101</width>
+      <x>20</x>
+      <y>475</y>
+      <width>326</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Hour hand slider</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="minuteHandSliderLabel">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>410</y>
-      <width>101</width>
+      <x>20</x>
+      <y>505</y>
+      <width>326</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Minute hand slider</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleSecondHandButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>10</y>
+      <x>380</x>
+      <y>460</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -223,7 +246,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 16px;
    padding: 6px;
 }
 
@@ -239,22 +262,29 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggleManualTimeButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>390</y>
+      <x>425</x>
+      <y>460</y>
       <width>41</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: bold 10px;
    padding: 6px;
 }
 
 QPushButton:pressed {
-   background-color: grey;
+  background-color: grey;
 }
 </string>
     </property>
@@ -265,10 +295,10 @@ QPushButton:pressed {
    <widget class="QPushButton" name="blackModeButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>360</y>
-      <width>21</width>
-      <height>21</height>
+      <x>10</x>
+      <y>435</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="palette">
@@ -742,7 +772,7 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  border-radius: 10%;
+  border-radius: 8px;
   background-color: black;} 
  QPushButton:pressed {
    background-color: grey;
@@ -755,10 +785,10 @@ QPushButton:pressed {
    <widget class="QPushButton" name="blueModeButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>360</y>
-      <width>21</width>
-      <height>21</height>
+      <x>30</x>
+      <y>435</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="palette">
@@ -1232,7 +1262,7 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  border-radius: 10%;
+  border-radius: 8px;
   background-color: #1976D2;}</string>
     </property>
     <property name="text">
@@ -1242,10 +1272,10 @@ QPushButton:pressed {
    <widget class="QPushButton" name="orangeModeButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>360</y>
-      <width>21</width>
-      <height>21</height>
+      <x>50</x>
+      <y>435</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="palette">
@@ -1719,7 +1749,7 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  border-radius: 10%;
+  border-radius: 8px;
   background-color: #FF5722;}</string>
     </property>
     <property name="text">
@@ -1729,10 +1759,10 @@ QPushButton:pressed {
    <widget class="QPushButton" name="greenModeButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>360</y>
-      <width>21</width>
-      <height>21</height>
+      <x>70</x>
+      <y>435</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="palette">
@@ -2206,7 +2236,7 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  border-radius: 10%;
+  border-radius: 8px;
   background-color: #388E3C;}</string>
     </property>
     <property name="text">
@@ -2216,8 +2246,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="dashLineLabel">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>320</y>
+      <x>40</x>
+      <y>400</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -2237,9 +2267,9 @@ QPushButton:pressed {
    <widget class="QLabel" name="digitalLabel">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>300</y>
-      <width>71</width>
+      <x>390</x>
+      <y>390</y>
+      <width>36</width>
       <height>21</height>
      </rect>
     </property>
@@ -2258,8 +2288,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="hourHandLabel">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>60</y>
+      <x>40</x>
+      <y>25</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -2279,8 +2309,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggleDigitalButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>290</y>
+      <x>425</x>
+      <y>370</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -2289,7 +2319,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 16px;
    padding: 6px;
 }
 
@@ -2305,8 +2335,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="toggle12HourModeButton">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>340</y>
+      <x>380</x>
+      <y>415</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -2315,7 +2345,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
    border: 2px solid black;
    border-radius: 10px;
-   font: bold 14px;
+   font: 20px;
    padding: 6px;
 }
 
@@ -2331,8 +2361,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="hourHandLabel_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>70</y>
+      <x>355</x>
+      <y>25</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -2352,9 +2382,9 @@ QPushButton:pressed {
    <widget class="QLabel" name="hourHandLabel_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>20</y>
-      <width>81</width>
+      <x>370</x>
+      <y>500</y>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -2376,7 +2406,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>478</width>
      <height>21</height>
     </rect>
    </property>
@@ -2392,4 +2422,21 @@ QPushButton:pressed {
  </customwidgets>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>5</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
 </ui>
